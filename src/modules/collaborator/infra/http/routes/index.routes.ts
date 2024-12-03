@@ -3,6 +3,6 @@ import InsertCollaboratorController from "../controller/InsertCollaboratorContro
 
 const router = Router();
 
-router.get("/new", new InsertCollaboratorController().handle as any);
+router.post("/new", new InsertCollaboratorController().handle as any);
 
 export default router;

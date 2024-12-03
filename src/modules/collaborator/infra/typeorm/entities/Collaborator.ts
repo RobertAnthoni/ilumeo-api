@@ -1,17 +1,28 @@
+import {
+  Column,
+  Entity,
+  JoinColumn,
+  OneToMany,
+  PrimaryGeneratedColumn,
+} from "typeorm";
+import { IPoint } from "../../../../point/domain/entities/IPoint";
+import Point from "../../../../point/infra/typeorm/entities/Point";
 import { ICollaborator } from "../../../domain/entities/ICollaborator";
-import { Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 @Entity("collaborator")
 export default class Collaborator implements ICollaborator {
   @PrimaryGeneratedColumn()
   id: number;
-  @Column()
+  @Column({ type: "varchar" })
   name: string;
-  @Column()
+  @Column({ type: "varchar" })
   code: string;
+  @JoinColumn()
+  @OneToMany(() => Point, (point) => point.collaborator)
+  points: IPoint[];
 
   public setId(id: number): void {
-    this.id;
+    this.id = id;
   }
 
   public getId(): number {

@@ -18,7 +18,7 @@ export default class CollaboratorRepository implements ICollaboratorRepository {
     });
   }
 
-  async insert(collaborator: Collaborator): Promise<InsertResult> {
-    return await this.repository.insert(collaborator);
+  async insert(collaborator: Collaborator): Promise<void> {
+    await this.repository.insert(collaborator);
   }
 }

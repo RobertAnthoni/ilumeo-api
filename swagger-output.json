@@ -1,0 +1,65 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Ilumeo API",
+    "description": "Documentação de Rotas",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3001/"
+    }
+  ],
+  "paths": {
+    "/collaborator/new": {
+      "post": {
+        "description": "Create a new collaborator",
+        "parameters": [
+          {
+            "name": "name",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "Robert Anthoni"
+            }
+          },
+          {
+            "name": "code",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ce474cdd-f5be-4abb-a6db-ad1d417a92fe"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "name": {
+                    "example": "Robert Anthoni"
+                  },
+                  "code": {
+                    "example": "ce474cdd-f5be-4abb-a6db-ad1d417a92fe"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Collaborator successfully inserted."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    }
+  }
+}

@@ -28,6 +28,8 @@ export default class InsertCollaboratorUseCase {
       collaborator.setCode(code);
 
       await this.collaboratorRepository.insert(collaborator);
+
+      return collaborator;
     } catch (error) {
       throw new Error("[InsertCollaboratorUseCase] - " + error);
     }

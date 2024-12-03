@@ -8,7 +8,7 @@ export const errorHandler = (
 ): void => {
   console.error(err.stack);
 
-  const message = err.message || "Erro interno do servidor";
+  const message = err.message || "Internal server error";
 
   res.status(500).json({
     message: message,
