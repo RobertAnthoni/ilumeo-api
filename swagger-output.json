@@ -34,26 +34,81 @@
             }
           }
         ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "type": "object",
-                "properties": {
-                  "name": {
-                    "example": "Robert Anthoni"
-                  },
-                  "code": {
-                    "example": "ce474cdd-f5be-4abb-a6db-ad1d417a92fe"
-                  }
-                }
-              }
-            }
-          }
-        },
         "responses": {
           "200": {
-            "description": "Collaborator successfully inserted."
+            "description": "Collaborator."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/collaborator/me": {
+      "get": {
+        "description": "Get collaborator by Code",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "params",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ce474cdd-f5be-4abb-a6db-ad1d417a92fe"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Collaborator."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/point/score-point": {
+      "post": {
+        "description": "Mark point for collaborator",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ce474cdd-f5be-4abb-a6db-ad1d417a92fe"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Point."
+          },
+          "500": {
+            "description": "Internal server error."
+          }
+        }
+      }
+    },
+    "/point/get-point": {
+      "get": {
+        "description": "Search for employee monthly points",
+        "parameters": [
+          {
+            "name": "code",
+            "in": "body",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "example": "ce474cdd-f5be-4abb-a6db-ad1d417a92fe"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Point."
           },
           "500": {
             "description": "Internal server error."

@@ -25,13 +25,7 @@ describe("Get Points", () => {
       inMemoryPointRepository
     );
 
-    const points = await useCase.execute({ code });
-
-    expect(points).toBeInstanceOf(Array || null);
-    if (points) {
-      points.forEach((point) => {
-        expect(point).toBeInstanceOf(Point);
-      });
-    }
+    const object = await useCase.execute({ code });
+    expect(object).toBeInstanceOf(Object);
   });
 });

@@ -9,7 +9,7 @@ export default class GetPointController {
       code: z.string().min(1),
     });
 
-    const params = schema.parse(req.body);
+    const params = schema.parse(req.query);
 
     const useCase = container.resolve(GetPointUseCase);
     const result = await useCase.execute(params);
