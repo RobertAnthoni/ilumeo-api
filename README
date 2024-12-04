@@ -1,0 +1,39 @@
+# Ilumeo Point API
+
+Sistema desenvolvido para case técnico para vaga de Jr Full Stack. Foram utilizadas as seguintes stacks para desenvolvimento da parte web:
+
+- Node.Js
+- TypeScript
+- Docker
+- Eslint/Pretier
+- SOLID
+- Vitest
+- Tsyringe (Injeção Dependência)
+- Swagger
+
+## Funções
+
+- Criação de novos colaboradores.
+- Registro de marcação de ponto.
+- Visualização de totalização de horas diaria e mensal.
+- Visualização detalhada de pontos.
+
+## Deploy
+
+Rodar o seguinte comando:
+
+    $ docker compose up -d
+
+Após isso api estará rodando porta 3000
+
+## Documentação
+
+Documentação Swagger da API encontra-se em:
+
+    localhost:3000/docs
+
+## Testes
+
+Comando para testes unitarios:
+
+    npm run test

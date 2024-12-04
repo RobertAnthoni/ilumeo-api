@@ -5,9 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "vitest",
-    "dev": "ts-node-dev --env-file .env  --transpile-only src/shareds/infra/http/server.ts",
+    "start": "ts-node-dev --env-file .env  --transpile-only src/shareds/infra/http/server.ts",
     "build": "tsc",
-    "start": "node dist/src/server.js"
+    "prod": "node src/shareds/infra/http/server.js"
   },
   "keywords": [],
   "author": "",

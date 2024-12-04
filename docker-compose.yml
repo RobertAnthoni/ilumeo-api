@@ -13,5 +13,22 @@ services:
     volumes:
       - ilupoint_pg_data:/var/lib/postgres/data
 
+  api-ilumeo:
+    container_name: api-ilumeo
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    environment:
+      - APPLICATION_NAME=ILUMEO-API
+      - APPLICATION_PORT=3000
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_USERNAME=root
+      - DB_PASSWORD=root
+      - DB_DATABASE=ilupoint
+    depends_on:
+      - postgres
+
 volumes:
   ilupoint_pg_data:
